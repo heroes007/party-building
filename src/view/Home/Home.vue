@@ -1,0 +1,205 @@
+<template>
+  <div>
+    <div class="home">
+      <div class="top">
+        <img src="../../assets/home/logo.png" alt="">
+        <a class="top-login" href="#/login">登录</a>
+      </div>
+      <div class="centre">
+        <div class="centre-swiper">
+          <swiper :options="swiperOption">
+            <swiper-slide class="swiper-content" v-for="(item, index) in swiper">
+              <img class="swiper-img" :src="item.imgUrl" alt="">
+              <div class="swiper-title">{{item.title}}</div>
+            </swiper-slide>
+            <div class="swiper-scrollbar"></div>
+            <div class="swiper-pagination"></div>
+          </swiper>
+        </div>
+        <div class="centre-icon">
+          <div class="icon-contnet">
+            <div>
+              <img src="../../assets/home/icon_01@2x.png" alt="">
+              <div>信工新闻眼</div>
+            </div>
+            <div>
+              <img src="../../assets/home/icon_02@2x.png" alt="">
+              <div>掌上组织生活</div>
+            </div>
+            <div>
+              <img src="../../assets/home/icon_03@2x.png" alt="">
+              <div>党员互动</div>
+            </div>
+          </div>
+          <div class="icon-contnet">
+            <div>
+              <img src="../../assets/home/icon_04@2x.png" alt="">
+              <div>信工新闻眼</div>
+            </div>
+            <div>
+              <img src="../../assets/home/icon_05@2x.png" alt="">
+              <div>掌上组织生活</div>
+            </div>
+            <div>
+              <img src="../../assets/home/icon_06@2x.png" alt="">
+              <div>党员互动</div>
+            </div>
+          </div>
+        </div>
+        <div class="centre-logo">
+          <img src="../../assets/home/banner01@2x.png" alt="">
+        </div>
+        <div class="centre-table">
+          <div class="table-study"></div>
+          <div class="table-study"></div>
+          <div class="table-study">
+            <div class="table-sun"></div>
+            <div class="table-sun"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import 'swiper/dist/css/swiper.css'////这里注意具体看使用的版本是否需要引入样式，以及具体位置。
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
+  import axios from 'axios'
+
+
+  export default {
+    name: "Home",
+    data() {
+      return {
+        swiperOption: {//swiper3
+          speed: 1000,
+          autoplay:true,
+        },
+        swiper:[]
+      }
+    },
+    components: {
+      swiper,
+      swiperSlide
+    },
+    methods:{
+      getSwiper(){
+        axios.get('http://211.67.177.56:8080/hhdj/carousel/carouselList.do?type=0').then(res =>{
+          this.swiper = res.data.rows
+          console.log(this.swiper)
+        })
+      }
+    },
+    created(){
+      this.getSwiper()
+    }
+  }
+</script>
+
+<style scoped lang="scss">
+  .home{
+    margin-bottom: 0.92rem;
+  }
+  //头部样式
+  .top {
+    background-color: #c50206;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.08rem;
+
+    .top-login {
+      text-decoration: none;
+      font-size: 0.36rem;
+      color: #ddd;
+      margin-right: 0.08rem;
+    }
+  }
+
+  //中间部分样式
+  .centre {
+    .centre-swiper{
+      .swiper-content{
+        height: 3.75rem;
+      }
+      .swiper-img{
+        width: 100%;
+      }
+
+      .swiper-title{
+        text-align: left;
+        padding-left: 0.08rempx;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0.24rem;
+        color: #fff;
+        line-height: 0.4rem;
+        background: rgba(0, 0, 0, .5);
+      }
+    }
+
+    .centre-icon {
+      height: 3.94rem;
+      background-image: url("../../assets/home/bt_bg@2x.png");
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .icon-contnet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 0.2rem;
+
+        img {
+          height: 1rem;
+        }
+      }
+    }
+    .centre-logo {
+      height: 1.8rem;
+      img {
+        height: 1.8rem;
+      }
+    }
+    .centre-table {
+      height: 3.3rem;
+      background-image: url("../../assets/home/channelType@2x.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .table-study {
+        height: 100%;
+        width: 33.33333%;
+        float: left;
+
+        .table-sun {
+          height: 50%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  //底部样式
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .nav-home {
+    width: 33.3333%;
+    font-size: 2.4rem;
+
+    img {
+      height: 4.8rem;
+    }
+  }
+</style>
