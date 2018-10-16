@@ -1,16 +1,18 @@
 <template>
   <div>
     <div class="home">
-      <div class="top">
+      <div class="home-top">
         <img src="../../assets/home/logo.png" alt="">
         <a class="top-login" href="#/login">登录</a>
       </div>
       <div class="centre">
         <div class="centre-swiper">
           <swiper :options="swiperOption">
-            <swiper-slide class="swiper-content" v-for="(item, index) in swiper">
-              <img class="swiper-img" :src="item.imgUrl" alt="">
-              <div class="swiper-title">{{item.title}}</div>
+            <swiper-slide class="swiper-content" v-for="(item, index) in swiper" :key="index">
+              <router-link :to="{path:'/index/slide', query:{newId:item.url}}">
+                <img class="swiper-img" :src="item.imgUrl" alt="">
+                <div class="swiper-title">{{item.title}}</div>
+              </router-link>
             </swiper-slide>
             <div class="swiper-scrollbar"></div>
             <div class="swiper-pagination"></div>
@@ -18,32 +20,32 @@
         </div>
         <div class="centre-icon">
           <div class="icon-contnet">
-            <div>
+            <router-link :to="{path:'/index/news', query:{type:0,title:'信工新闻眼'}}" class="link route-link">
               <img src="../../assets/home/icon_01@2x.png" alt="">
               <div>信工新闻眼</div>
-            </div>
-            <div>
+            </router-link>
+            <router-link to="/index/mobile" class="link route-link">
               <img src="../../assets/home/icon_02@2x.png" alt="">
               <div>掌上组织生活</div>
-            </div>
-            <div>
+            </router-link>
+            <router-link to="" class="link route-link">
               <img src="../../assets/home/icon_03@2x.png" alt="">
               <div>党员互动</div>
-            </div>
+            </router-link>
           </div>
           <div class="icon-contnet">
-            <div>
+            <router-link :to="{path:'/index/news', query:{type:'3', title:'党政一点通'}}" class="link route-link">
               <img src="../../assets/home/icon_04@2x.png" alt="">
-              <div>信工新闻眼</div>
-            </div>
-            <div>
+              <div>党政一点通</div>
+            </router-link>
+            <router-link :to="{path:'/index/news', query:{type:'5', title:'党员亮身份'}}" class="link route-link">
               <img src="../../assets/home/icon_05@2x.png" alt="">
-              <div>掌上组织生活</div>
-            </div>
-            <div>
+              <div>党员亮身份</div>
+            </router-link>
+            <router-link to="" class="link route-link">
               <img src="../../assets/home/icon_06@2x.png" alt="">
-              <div>党员互动</div>
-            </div>
+              <div>党史上的今天</div>
+            </router-link>
           </div>
         </div>
         <div class="centre-logo">
@@ -51,10 +53,19 @@
         </div>
         <div class="centre-table">
           <div class="table-study"></div>
-          <div class="table-study"></div>
+          <div class="table-study">
+            <router-link :to="{path:'/index/news', query:{type:'6', title:'随时随地学'}}" class="link">
+              <div class="table-sun"></div>
+            </router-link>
+            <router-link :to="{path:'/index/news', query:{type:'4', title:'制度建设'}}" class="link">
+              <div class="table-sun"></div>
+            </router-link>
+          </div>
           <div class="table-study">
             <div class="table-sun"></div>
-            <div class="table-sun"></div>
+            <router-link :to="{path:'/index/news', query:{type:'1', title:'特色活动'}}" class="link">
+              <div class="table-sun"></div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -87,7 +98,7 @@
       getSwiper(){
         axios.get('http://211.67.177.56:8080/hhdj/carousel/carouselList.do?type=0').then(res =>{
           this.swiper = res.data.rows
-          console.log(this.swiper)
+          console.log(res.data.rows)
         })
       }
     },
@@ -102,7 +113,7 @@
     margin-bottom: 0.92rem;
   }
   //头部样式
-  .top {
+  .home-top {
     background-color: #c50206;
     display: flex;
     justify-content: space-between;
@@ -129,7 +140,7 @@
 
       .swiper-title{
         text-align: left;
-        padding-left: 0.08rempx;
+        padding-left: 0.08rem;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -153,6 +164,10 @@
         flex-direction: row;
         justify-content: space-around;
         font-size: 0.2rem;
+
+        .route-link{
+          width: 100px;
+        }
 
         img {
           height: 1rem;

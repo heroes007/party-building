@@ -26,6 +26,30 @@ export default new Router({
     {
       path:'/login',
       component:() => import('@/view/Login/Login')
+    },
+    {
+      path:`/inform/content`,
+      component:() => import('@/view/Inform/Inform-content')
+    },
+    {
+      path:'/index/slide',
+      component:() => import('@/view/Home/Slide')
+    },
+    {
+      path:'/index/news',
+      component:() => import('@/view/Component/News')
+    },
+    {
+      path:'/index/news/content',
+      component: () => import('@/view/Component/NewsContent')
+    },
+    {
+      path:'/index/mobile',
+      component: () => import('@/view/Mobile/Mobile')
+    },
+    {
+      path:'/index/map',
+      component: () => import('@/view/Mobile/Map')
     }
   ]
 })

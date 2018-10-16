@@ -31,4 +31,28 @@ export default {
     clear: both;
     visibility: hidden;
   }
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #c50206;
+    padding: 10px;
+
+    .top-left {
+      float: left;
+      height: 20px;
+      width: 20px;
+      margin-right: -20px;
+    }
+
+    .top-title {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+  .link{
+    text-decoration: none;
+    color: #000;
+  }
 </style>
