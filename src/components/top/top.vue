@@ -1,21 +1,18 @@
 <template>
     <div class="top">
-      
+      <img class="top-left" src="../../assets/左.png" alt="">
+      <div class="top-title">{{title}}</div>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "top"
+  export default {
+    name: "top",
+    props:{
+      title:''
     }
+  }
 </script>
 
 <style scoped>
-  .top{
-    height: 43px;
-    background-color: #c50206;
-    color: #fff;
-    font-size: 18px;
-    line-height: 43px;
-  }
 </style>

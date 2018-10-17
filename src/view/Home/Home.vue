@@ -3,7 +3,7 @@
     <div class="home">
       <div class="home-top">
         <img src="../../assets/home/logo.png" alt="">
-        <a class="top-login" href="#/login">登录</a>
+        <a class="top-login" href="#/login" v-if="!store">登录</a>
       </div>
       <div class="centre">
         <div class="centre-swiper">
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-  import 'swiper/dist/css/swiper.css'////这里注意具体看使用的版本是否需要引入样式，以及具体位置。
+  import 'swiper/dist/css/swiper.css'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
   import axios from 'axios'
 
@@ -87,7 +87,8 @@
           speed: 1000,
           autoplay:true,
         },
-        swiper:[]
+        swiper:[],
+        store:'',
       }
     },
     components: {
@@ -98,12 +99,15 @@
       getSwiper(){
         axios.get('http://211.67.177.56:8080/hhdj/carousel/carouselList.do?type=0').then(res =>{
           this.swiper = res.data.rows
-          console.log(res.data.rows)
         })
+      },
+      getStore(){
+        this.store = this.$store.state.userInfo
       }
     },
     created(){
-      this.getSwiper()
+      this.getSwiper(),
+      this.getStore()
     }
   }
 </script>

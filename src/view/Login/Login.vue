@@ -2,13 +2,13 @@
   <div class="login">
     <div class="login-top">
       <img class="top-img" src="../../assets/左.png" alt="" v-on:click="this.back">
-      <div class="top-title" >登录</div>
+      <div class="top-title">登录</div>
     </div>
     <div class="login-content">
       <img class="content-img" src="../../assets/home/logo.png" alt="">
-      <input class="content-input" type="text" placeholder="身份证号">
-      <input class="content-input" type="text" placeholder="密码">
-      <button class="content-btn">登录</button>
+      <input class="content-input" v-model="loginData.id_card" type="text" placeholder="身份证号">
+      <input class="content-input" v-model="loginData.password" type="password" placeholder="密码">
+      <button class="content-btn" @click="login">登录</button>
     </div>
   </div>
 </template>
@@ -16,7 +16,29 @@
 <script>
   export default {
     name: "Login",
+    data(){
+      return{
+        loginData:{
+          id_card:'',
+          password:''
+        }
+      }
+    },
     methods:{
+      login(){
+        var form = new FormData()
+        form.append("id_card",this.loginData.id_card)
+        form.append("password",this.loginData.password)
+        this.$axios.post('/hhdj/user/userLogin.do',form).then(res => {
+          this.$store.commit('increment',res.data)
+          this.$store.commit('addToken',res.token)
+          if(res.code == 1){
+            this.$router.push('/mine')
+          }else{
+            console.log(res.msg)
+          }
+        })
+      }
     }
   }
 </script>
@@ -25,6 +47,7 @@
   .login{
     height: 100vh;
     background-color: #c50206;
+    box-sizing: border-box;
   }
   .login-top{
     height: 0.86rem;

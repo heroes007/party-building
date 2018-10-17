@@ -50,6 +50,14 @@ export default {
       color: #fff;
       font-size: 18px;
     }
+
+    .top-change{
+      color: #fff;
+      font-size: 18px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
   .link{
     text-decoration: none;

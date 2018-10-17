@@ -50,6 +50,18 @@ export default new Router({
     {
       path:'/index/map',
       component: () => import('@/view/Mobile/Map')
+    },
+    {
+      path:'/mine/user',
+      component: () => import('@/view/Mine/MineInfo')
+    },
+    {
+      path:'/mine/user/change',
+      component: () => import('@/view/Mine/MineInfoChange')
+    },
+    {
+      path:'/mine/user/integray',
+      component: () => import('@/view/Mine/Integray')
     }
   ]
 })
