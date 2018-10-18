@@ -42,7 +42,7 @@
               <img src="../../assets/home/icon_05@2x.png" alt="">
               <div>党员亮身份</div>
             </router-link>
-            <router-link to="" class="link route-link">
+            <router-link to="/home/history" class="link route-link">
               <img src="../../assets/home/icon_06@2x.png" alt="">
               <div>党史上的今天</div>
             </router-link>

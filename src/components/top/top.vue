@@ -1,6 +1,6 @@
 <template>
     <div class="top">
-      <img class="top-left" src="../../assets/左.png" alt="">
+      <img class="top-left" src="../../assets/左.png" @click="this.back" alt="">
       <div class="top-title">{{title}}</div>
     </div>
 </template>

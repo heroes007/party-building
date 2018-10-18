@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "element-ui": "^2.4.8",
+    "iconv-lite": "^0.4.24",
     "node-sass": "^4.9.3",
     "qs": "^6.5.2",
     "sass-loader": "^7.1.0",

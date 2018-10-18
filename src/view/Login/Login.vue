@@ -26,16 +26,14 @@
     },
     methods:{
       login(){
-        var form = new FormData()
-        form.append("id_card",this.loginData.id_card)
-        form.append("password",this.loginData.password)
-        this.$axios.post('/hhdj/user/userLogin.do',form).then(res => {
-          this.$store.commit('increment',res.data)
-          this.$store.commit('addToken',res.token)
-          if(res.code == 1){
+        this.$axios.post('/hhdj/user/userLogin.do',this.loginData).then(res => {
+          console.log(res)
+          if(res.data.code == 1){
+            this.$store.commit('increment',res.data.data)
+            this.$store.commit('addToken',res.data.token)
             this.$router.push('/mine')
           }else{
-            console.log(res.msg)
+            console.log(res.data.msg)
           }
         })
       }

@@ -16,17 +16,17 @@
         <div class="list-title">个人信息</div>
         <img class="list-img" src="../../assets/right.png" alt="">
       </router-link>
-      <router-link :to="userInfo ? '/mine/user' : 'login'" class="mine-list">
+      <router-link :to="userInfo ? '/mine/integral' : 'login'" class="mine-list">
         <img class="list-icon" src="../../assets/lxjf.png" alt="">
         <div class="list-title">个人量化积分</div>
         <img class="list-img" src="../../assets/right.png" alt="">
       </router-link>
-      <router-link :to="userInfo ? '/mine/user' : 'login'" class="mine-list">
+      <router-link :to="userInfo ? '/mine/password' : 'login'" class="mine-list">
         <img class="list-icon" src="../../assets/xgmm.png" alt="">
         <div class="list-title">修改密码</div>
         <img class="list-img" src="../../assets/right.png" alt="">
       </router-link>
-      <router-link :to="userInfo ? '/mine/user' : 'login'" class="mine-list">
+      <router-link :to="userInfo ? '/mine/cost' : 'login'" class="mine-list">
         <img class="list-icon" src="../../assets/icon3.png" alt="">
         <div class="list-title">党费缴纳</div>
         <img class="list-img" src="../../assets/right.png" alt="">

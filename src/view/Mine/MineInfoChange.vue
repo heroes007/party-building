@@ -8,7 +8,12 @@
     <div  class="userList">
       <div class="userInfo-content">
         <div class="content-title">头像</div>
-        <inputUpload class="content-img" :inputImg="header" v-on:childrenUrl="childrenUrl"></inputUpload>
+        <div>
+          <label class="content-label">
+            <input class="content-inputFile" type="file" @change="getimg">
+            <img class="content-inputImg" :src="header" >
+          </label>
+        </div>
       </div>
       <div class="userInfo-content">
         <div class="content-title">姓名</div>
@@ -61,11 +66,11 @@
       </div>
       <div class="userInfo-content">
         <div class="content-title">入党时间</div>
-        <input class="content-input" type="text" v-model="data.joinPartyTime">
+        <input class="content-input" type="date" v-model="data.joinPartyTime">
       </div>
       <div class="userInfo-content">
         <div class="content-title">党费最后缴纳时间</div>
-        <input class="content-input" type="text" v-model="data.lastPayTime">
+        <input class="content-input" type="date" v-model="data.lastPayTime">
       </div>
       <div class="userInfo-content">
         <div class="content-title">当前身份</div>
@@ -76,8 +81,6 @@
 </template>
 
 <script>
-  import inputUpload from '../../components/input/input'
-
   export default {
     name: "MineInfoChange",
     data(){
@@ -96,14 +99,14 @@
           joinPartyTime: '1',
           lastPayTime: '1',
           partyStatus: '1',
+          header:'',
         },
         partyIdentity:'',
         idCard:'',
-        header:''
+        header:'',
+        imageUrl:'',
+        myFile:''
       }
-    },
-    components:{
-      inputUpload
     },
     methods:{
       getUser(){
@@ -116,10 +119,9 @@
         })
       },
       save(){
-        console.log(this.data)
+        console.log(this.data.header)
         this.$axios.post('/hhdj/user/modifyInfo.do',this.data).then(res => {
           if(res.status == 200){
-            console.log(res)
             this.$router.push('/mine/user')
           }
         })
@@ -134,7 +136,21 @@
             this.data[i] = data[i]
           }
         }
-      }
+      },
+      getimg(event) {
+        this.imageUrl = event.target.files[0]
+        const reader = new FileReader()
+        reader.readAsDataURL(this.imageUrl);
+        const _this = this
+        reader.onload = function (e) {
+          const imgcode = e.target.result;
+          const myFile = imgcode.split(',')[1]
+          _this.$axios.post('/hhdj/image/uploadBase64.do',myFile ).then(res => {
+            console.log(res)
+            _this.data.header = res.data.url
+          })
+        }
+      },
     },
     created(){
       this.getUser()
@@ -182,6 +198,20 @@
     span{
       font-size: 18px;
       margin: 0 6px;
+    }
+
+    .content-label{
+      display: block;
+      height: 24px;
+      width: 24px;
+    }
+    .content-inputFile{
+      display: none;
+    }
+    .content-inputImg{
+      width: 100%;
+      height: 100%;
+      float: left;
     }
   }
 </style>

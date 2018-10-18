@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="top">
-      <img class="top-left" src="../../assets/左.png" @click="this.back" alt="">
+      <img class="top-left" src="../../assets/左.png" @click="backMine" alt="">
       <div class="top-title">个人信息</div>
       <div class="top-change" @click="edit">编辑</div>
     </div>
@@ -86,6 +86,9 @@
       },
       edit(){
         this.$router.push('/mine/user/change')
+      },
+      backMine(){
+        this.$router.push('/mine')
       }
     },
     created(){

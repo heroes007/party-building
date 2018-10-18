@@ -60,8 +60,24 @@ export default new Router({
       component: () => import('@/view/Mine/MineInfoChange')
     },
     {
-      path:'/mine/user/integray',
-      component: () => import('@/view/Mine/Integray')
+      path:'/mine/integral',
+      component: () => import('@/view/Mine/Integral')
+    },
+    {
+      path:'/mine/integral/detail',
+      component: () => import('@/view/Mine/IntegralDetail')
+    },
+    {
+      path:'/mine/password',
+      component: () => import('@/view/Mine/Password')
+    },
+    {
+      path:'/mine/cost',
+      component: () => import('@/view/Mine/Cost')
+    },
+    {
+      path:'/home/history',
+      component: () => import('@/view/Component/History')
     }
   ]
 })

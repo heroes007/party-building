@@ -1,13 +1,8 @@
 <template>
-  <el-upload
-    class="avatar-uploader"
-    action="http://upload-z1.qiniup.com"
-    :data = 'upload'
-    :show-file-list="false"
-    :on-success="handleAvatarSuccess"
-    :before-upload="beforeAvatarUpload">
+  <div>
+    <input class="inputFile" type="file" @change="getimg" @click="handleAvatar">
     <img :src="imageUrl ? imageUrl : inputImg" class="avatar">
-  </el-upload>
+  </div>
 </template>
 
 <script>
@@ -16,60 +11,39 @@
     data() {
       return {
         imageUrl: '',
-        upload:{token:""}
+        baseUrl: ''
       };
     },
-    props:{
-      inputImg:''
+    props: {
+      inputImg: ''
     },
     methods: {
-      handleAvatarSuccess(res, file) {
-        this.imageUrl = res.url;
-        this.$emit('childrenUrl',this.imageUrl)
+      handleAvatar() {
+        this.$emit('childrenUrl', this.baseUrl)
       },
-      beforeAvatarUpload(file) {
-        const isJPG = file.type === 'image/jpeg';
-        const isLt2M = file.size / 1024 / 1024 < 2;
+      getimg(event) {
+        this.imageUrl = event.target.files[0]
+        var reader = new FileReader()
+        reader.readAsDataURL(this.imageUrl);
+        reader.onload = function (e) {
+          var imgcode = e.target.result;
+          // console.log(imgcode);
+          let File = imgcode.split(',')
+          let formData = new FormData()
+          // console.log(File[1])
+          formData.append('myFile',File[1])
+          // console.log(formData)
+          axios.post('http://211.67.177.56:8080/hhdj/image/uploadBase64.do', formData ).then(res => {
+            console.log(res)
+          })
 
-        if (!isJPG) {
-          this.$message.error('上传头像图片只能是 JPG 格式!');
         }
-        if (!isLt2M) {
-          this.$message.error('上传头像图片大小不能超过 2MB!');
-        }
-        return isJPG && isLt2M;
       },
-      getupload(){
-        axios.get('http://upload.yaojunrong.com/getToken').then(res=>{
-          this.upload.token = res.data.data
-        })
-      }
-    },
-    created(){
-      this.getupload()
     }
   }
 </script>
 
 <style scoped>
-  .avatar-uploader .el-upload {
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-  .avatar-uploader .el-upload:hover {
-    border-color: #409EFF;
-
-  }
-  .avatar-uploader-icon {
-    font-size: 20px;
-    color: #8c939d;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
   .avatar {
     width: 100%;
     height: 100%;
