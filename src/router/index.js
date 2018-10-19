@@ -76,8 +76,37 @@ export default new Router({
       component: () => import('@/view/Mine/Cost')
     },
     {
-      path:'/home/history',
+      path:'/index/history',
       component: () => import('@/view/Component/History')
+    },
+    {
+      path:'/index/photo',
+      component: () => import('@/view/Component/Photo')
+    },
+    {
+      path:'/index/comment',
+      component: () => import('@/view/Component/Comment')
+    },
+    {
+      path:'/index/comment/reply',
+      name:'reply',
+      component: () => import('@/view/Component/Reply')
+    },
+    {
+      path:'/index/sammary',
+      component: () => import('@/view/Mobile/Sammary')
+    },
+    {
+      path:'/index/sammary/person',
+      component: () => import('@/view/Mobile/Person')
+    },
+    {
+      path:'/index/sammary/public',
+      component: () => import('@/view/Mobile/Public')
+    },
+    {
+      path:'/index/sammary/people',
+      component: () => import('@/view/Mobile/People')
     }
   ]
 })

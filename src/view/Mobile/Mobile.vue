@@ -20,7 +20,7 @@
         <img class="essay-img" src="../../assets/icon3.png" alt="">
         <div class="essay-title">心得总结</div>
       </router-link>
-      <router-link to="" class="content-essay link">
+      <router-link to="/index/sammary" class="content-essay link">
         <img class="essay-img" src="../../assets/icon4.png" alt="">
         <div class="essay-title">民主评议</div>
       </router-link>

@@ -7,7 +7,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state:{
     userInfo:"",
-    token:""
+    token:"",
+    reply:""
   },
   mutations:{
     increment(state, userInfo){
@@ -15,6 +16,9 @@ const store = new Vuex.Store({
     },
     addToken(state, token){
       state.token = token
+    },
+    addReply(state, reply){
+      state.reply = reply
     }
   },
   plugins: [

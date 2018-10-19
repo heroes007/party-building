@@ -105,7 +105,9 @@
         idCard:'',
         header:'',
         imageUrl:'',
-        myFile:''
+        myFile:{
+          myFile:''
+        }
       }
     },
     methods:{
@@ -144,9 +146,8 @@
         const _this = this
         reader.onload = function (e) {
           const imgcode = e.target.result;
-          const myFile = imgcode.split(',')[1]
-          _this.$axios.post('/hhdj/image/uploadBase64.do',myFile ).then(res => {
-            console.log(res)
+          _this.myFile.myFile = imgcode.split(',')[1]
+          _this.$axios.post('/hhdj/image/uploadBase64.do',_this.myFile ).then(res => {
             _this.data.header = res.data.url
           })
         }

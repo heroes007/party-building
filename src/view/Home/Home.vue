@@ -28,7 +28,7 @@
               <img src="../../assets/home/icon_02@2x.png" alt="">
               <div>掌上组织生活</div>
             </router-link>
-            <router-link to="" class="link route-link">
+            <router-link :to="store ? '/index/comment' :'/login'" class="link route-link">
               <img src="../../assets/home/icon_03@2x.png" alt="">
               <div>党员互动</div>
             </router-link>
@@ -42,7 +42,7 @@
               <img src="../../assets/home/icon_05@2x.png" alt="">
               <div>党员亮身份</div>
             </router-link>
-            <router-link to="/home/history" class="link route-link">
+            <router-link to="/index/history" class="link route-link">
               <img src="../../assets/home/icon_06@2x.png" alt="">
               <div>党史上的今天</div>
             </router-link>
@@ -62,7 +62,9 @@
             </router-link>
           </div>
           <div class="table-study">
-            <div class="table-sun"></div>
+            <router-link to="/index/photo" class="link">
+              <div class="table-sun"></div>
+            </router-link>
             <router-link :to="{path:'/index/news', query:{type:'1', title:'特色活动'}}" class="link">
               <div class="table-sun"></div>
             </router-link>
