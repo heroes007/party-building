@@ -60,64 +60,67 @@
 
 <style scoped lang="scss">
   .mine-top{
-    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.86rem;
     background-color: #c50206;
     color: #fff;
-    font-size: 18px;
-    line-height: 43px;
+    font-size: 0.36rem;
+    line-height: 0.86;
   }
   .mine-login{
-    height: 200px;
+    height: 4rem;
     background-color: #c50206;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .login-img{
-      height: 68px;
-      width: 68px;
+      height: 1.36rem;
+      width: 1.36rem;
       border-radius: 50%;
-      margin-top: 40px;
+      margin-top: 0.8rem;
     }
     .login-hint{
       text-decoration: none;
-      font-size: 16px;
-      margin-top: 20px;
+      font-size: 0.32rem;
+      margin-top: 0.4rem;
       color: #fff;
     }
   }
   .mine-list{
-    padding: 10px;
+    padding: 0.2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.02rem solid #ccc;
     text-decoration: none;
 
     .list-icon{
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
+      width: 0.6rem;
+      height: 0.6rem;
+      margin-right: 0.2rem;
     }
     .list-title{
-      font-size: 18px;
+      font-size: 0.36rem;
       color: #666;
     }
     .list-img{
-      height: 18px;
+      height: 0.36rem;
       position: fixed;
-      right: 10px;
+      right: 0.2rem;
     }
   }
   .outBtn{
-    width: 360px;
-    height: 45px;
+    width: 7.2rem;
+    height: 0.9rem;
     position: absolute;
-    top: 480px;
+    top: 9.6rem;
     color: #eee;
     background-color: #ef473a;
     border: 0;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
   }
 </style>

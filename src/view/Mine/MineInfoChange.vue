@@ -74,7 +74,11 @@
       </div>
       <div class="userInfo-content">
         <div class="content-title">当前身份</div>
-        <input class="content-input" type="text" v-model="partyIdentity">
+        <select  v-model="data.partyStatus" class="content-input select">
+          <option value = 2 >党员</option>
+          <option value = 1 >预备党员</option>
+          <option value = 0 >积极分子</option>
+        </select>
       </div>
     </div>
   </div>
@@ -101,19 +105,19 @@
           partyStatus: '1',
           header:'',
         },
-        partyIdentity:'',
         idCard:'',
         header:'',
         imageUrl:'',
         myFile:{
           myFile:''
-        }
+        },
+        store:''
       }
     },
     methods:{
       getUser(){
         this.$axios.get('/hhdj/user/userInfo.do').then(res => {
-          console.log(res.data)
+          this.store = res.data
           this.getValue(res.data)
           this.idCard = res.data.idCard
           this.partyIdentity = res.data.partyIdentity
@@ -121,16 +125,11 @@
         })
       },
       save(){
-        console.log(this.data.header)
         this.$axios.post('/hhdj/user/modifyInfo.do',this.data).then(res => {
           if(res.status == 200){
             this.$router.push('/mine/user')
           }
         })
-      },
-      childrenUrl(inputImg){
-        this.data.header = inputImg
-        console.log(this.data.header)
       },
       getValue(data){
         for(var i in data){
@@ -146,6 +145,9 @@
         const _this = this
         reader.onload = function (e) {
           const imgcode = e.target.result;
+          _this.header = imgcode
+          _this.store.header = _this.header
+          _this.$store.commit('increment',_this.store)
           _this.myFile.myFile = imgcode.split(',')[1]
           _this.$axios.post('/hhdj/image/uploadBase64.do',_this.myFile ).then(res => {
             _this.data.header = res.data.url
@@ -161,22 +163,22 @@
 
 <style scoped lang="scss">
   .userList{
-    margin-top: 42px;
+    margin-top: 0.84rem;
   }
   .userInfo-content{
-    height: 50px;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
+    height: 1rem;
+    border-bottom: 0.02rem solid #ccc;
+    padding: 0.2rem;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
 
     .content-title{
-      font-size: 18px;
+      font-size: 0.36rem;
     }
 
     .content-input{
-      font-size: 18px;
+      font-size: 0.36rem;
       text-align: right;
       border: 0;
       outline:none;
@@ -184,10 +186,14 @@
       background-color: #fff;
     }
 
+    .select{
+      width: 100px;
+    }
+
     .content-img{
-      height: 26px!important;
-      width: 26px!important;
-      font-size: 20px;
+      height: 0.52rem!important;
+      width: 0.52rem!important;
+      font-size: 0.4rem;
 
     }
 
@@ -197,14 +203,14 @@
     }
 
     span{
-      font-size: 18px;
-      margin: 0 6px;
+      font-size: 0.36rem;
+      margin: 0 0.12rem;
     }
 
     .content-label{
       display: block;
-      height: 24px;
-      width: 24px;
+      height: 0.48rem;
+      width: 0.48rem;
     }
     .content-inputFile{
       display: none;

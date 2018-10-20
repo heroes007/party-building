@@ -22,6 +22,7 @@
 </template>
 
 <script>
+  import { Loadmore } from 'mint-ui';
   export default {
     name: "News",
     data() {
@@ -35,6 +36,9 @@
         }
       }
     },
+    components:{
+      Loadmore
+    },
     methods: {
       getData() {
         this.newsData.type = this.$route.query.type
@@ -43,27 +47,20 @@
         })
         this.title = this.$route.query.title
       },
-      // addRows(){
-      //   this.newsData.rows += 10
-      //   console.log(this.newsData.rows)
-      // }
+      loadBottom(){
+        console.log(123)
+      }
     },
     created() {
       this.getData()
     },
-    // updated(){
-    //   this.newsData.rows += 10
-    //   console.log(this.newsData.rows)
-    //   this.getData()
-    //   this.addRows()
-    // }
   }
 </script>
 
 <style scoped lang="scss">
   .news-main {
     font-size: 0.4rem;
-    margin-top: 44px;
+    margin-top: 0.88rem;
 
     .new-content{
       display: flex;

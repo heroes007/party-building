@@ -36,8 +36,7 @@
 
 <style lang="scss">
   .news-content{
-    margin: 0.2rem;
-    margin-top: 44px;
+    margin: 0.88rem 0.2rem 0.2rem 0.2rem;
 
     .content-title{
       font-size: 0.4rem;

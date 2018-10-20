@@ -37,26 +37,26 @@ export default {
     left: 0;
     right: 0;
     background-color: #c50206;
-    padding: 10px;
+    padding: 0.2rem;
 
     .top-left {
       float: left;
-      height: 20px;
-      width: 20px;
-      margin-right: -20px;
+      height: 0.4rem;
+      width: 0.4rem;
+      margin-right: -0.4rem;
     }
 
     .top-title {
       color: #fff;
-      font-size: 18px;
+      font-size: 0.36rem;
     }
 
     .top-change{
       color: #fff;
-      font-size: 18px;
+      font-size: 0.36rem;
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 0.2rem;
+      right: 0.2rem;
     }
   }
   .link{

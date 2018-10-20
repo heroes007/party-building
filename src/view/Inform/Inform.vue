@@ -35,26 +35,26 @@
 
 <style scoped lang="scss">
   .inform-top{
-    height: 43px;
+    height: 0.83rem;
     background-color: #c50206;
     color: #fff;
-    font-size: 18px;
-    line-height: 43px;
+    font-size: 0.36rem;
+    line-height: 0.86rem;
   }
   .inform-content{
-    height: 80px;
-    padding: 10px;
+    height: 1.6rem;
+    padding: 0.2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.02rem solid #ccc;
     text-decoration: none;
     color: #000;
 
     .content-img{
-      height: 36px;
-      width: 46px;
-      margin: 0 14px;
+      height: 0.72rem;
+      width: 0.92rem;
+      margin: 0 0.28rem;
     }
 
     .content-message{
@@ -63,19 +63,19 @@
 
 
       .message-title{
-        font-size: 16px;
+        font-size: 0.32rem;
         text-align: left;
       }
       .message-time{
-        font-size: 14px;
+        font-size: 0.28rem;
         text-align: left;
-        margin-top: 10px;
+        margin-top: 0.2rem;
       }
     }
   }
   .inform-end{
-    font-size: 16px;
+    font-size: 0.32rem;
     color: #999;
-    margin-top: 10px;
+    margin-top: 0.2rem;
   }
 </style>

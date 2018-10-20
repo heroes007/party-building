@@ -41,24 +41,24 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
+    margin-top: 0.8rem;
   }
   .detail{
-    height: 80px;
-    padding: 20px;
+    height: 1.6rem;
+    padding: 0.4rem;
     box-sizing: border-box;
-    border-bottom: 1px solid #eee;
+    border-bottom: 0.02rem solid #eee;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 0.4rem;
     justify-content: space-between;
 
     .detail-content{
       text-align: left;
 
       .content-time{
-        margin-top: 10px;
-        font-size: 16px;
+        margin-top: 0.2rem;
+        font-size: 0.32rem;
       }
     }
     .detail-score{

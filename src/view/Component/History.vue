@@ -40,13 +40,13 @@
 
 <style lang="scss">
   .history{
-    margin-top: 40px;
-    padding: 10px;
-    font-size: 15px;
+    margin-top: 0.8rem;
+    padding: 0.2rem;
+    font-size: 0.3rem;
     text-align: left;
 
     p{
-      margin:10px 0 20px 0;
+      margin:0.2rem 0 0.4rem 0;
     }
   }
 </style>

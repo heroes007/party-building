@@ -94,13 +94,13 @@
     height: 100vh;
   }
   .content {
-    padding-top: 40px;
+    padding-top: 0.8rem;
   }
 
   .comment-box {
-    margin: 10px;
+    margin: 0.2rem;
     background-color: #fff;
-    padding: 10px;
+    padding: 0.2rem;
 
     .box-person {
       display: flex;
@@ -109,29 +109,29 @@
       .person-left{
 
         .left-img{
-          height: 40px;
+          height: 0.8rem;
           border-radius: 50%;
         }
       }
       .person-right{
         text-align: left;
-        margin-left: 10px;
+        margin-left: 0.2rem;
 
         .right-title{
-          font-size: 22px;
+          font-size: 0.44rem;
         }
         .right-time{
           display: flex;
           flex-direction: row;
           align-items: center;
-          margin-top: 6px;
+          margin-top: 0.12rem;
 
           .time-img{
-            height: 14px;
+            height: 0.28rem;
           }
           .time-content{
-            font-size: 14px;
-            margin-left: 4px;
+            font-size: 0.28rem;
+            margin-left: 0.08rem;
           }
         }
       }
@@ -139,19 +139,19 @@
   }
   .reply-box{
     width: 100%;
-    margin: 4px 0;
-    padding: 10px;
+    margin: 0.08rem 0;
+    padding: 0.2rem;
     box-sizing: border-box;
   }
   .comment-content{
-    font-size: 16px;
+    font-size: 0.32rem;
     text-align: left;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
   }
   .hint{
-    margin-top: 20px;
-    font-size: 16px;
+    margin-top: 0.4rem;
+    font-size: 0.32rem;
     color: #666;
   }
   .bottom{
@@ -160,26 +160,26 @@
     left: 0;
     right: 0;
     background-color: #fff;
-    height: 40px;
+    height: 0.8rem;
     display: flex;
     align-items: center;
 
     .bottom-input{
-      border: 1px solid #c50206;
-      border-radius: 4px;
-      height: 26px;
-      width: 300px;
-      margin: 0 14px;
-      padding: 0 6px;
+      border: 0.02rem solid #c50206;
+      border-radius: 0.08rem;
+      height: 0.32rem;
+      width: 6rem;
+      margin: 0 0.28rem;
+      padding: 0 0.12rem;
       box-sizing: border-box;
     }
     .bottom-btn{
-      height: 26px;
-      width: 34px;
+      height: 0.52rem;
+      width: 0.68rem;
       border: 0;
       background-color: #c50206;
       color: #eee;
-      border-radius: 4px;
+      border-radius: 0.08rem;
     }
   }
 </style>

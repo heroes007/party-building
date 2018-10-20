@@ -96,12 +96,12 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
-    font-size: 20px;
+    margin-top: 0.8rem;
+    font-size: 0.4rem;
   }
   .content-box{
-    padding: 10px;
-    border-bottom: 10px solid #eee;
+    padding: 0.2rem;
+    border-bottom: 0.2rem solid #eee;
   }
   .box-person{
     display: flex;
@@ -118,67 +118,67 @@
     .person-img{
 
       .person-image{
-        height: 32px;
-        width: 32px;
+        height: 0.64rem;
+        width: 0.64rem;
         border-radius: 50%;
       }
     }
 
     .person-essay{
       text-align: left;
-      margin-left: 20px;
+      margin-left: 0.4rem;
 
       .essay-state{
         display: flex;
         flex-direction: row;
-        font-size: 14px;
+        font-size: 0.28rem;
         align-items: center;
-        margin-top: 4px;
+        margin-top: 0.08rem;
 
         .time-img{
-          height: 14px;
+          height: 0.28rem;
         }
         .state-time{
-          margin: 0 4px;
+          margin: 0 0.08rem;
         }
         .whether-img{
-          height: 14px;
+          height: 0.28rem;
         }
         .state-whether{
-          margin: 0 4px;
+          margin: 0 0.08rem;
         }
       }
     }
     .right-img{
-      height: 26px;
+      height: 0.52rem;
     }
   }
   .box-review{
     text-align: left;
-    margin-top: 16px;
-    font-size: 17px;
+    margin-top: 0.32rem;
+    font-size: 0.34rem;
   }
   .box-btn{
     float: right;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 0.2rem;
 
     .btn-img{
-      height: 14px;
+      height: 0.28rem;
     }
     .btn-title{
-      margin-left: 8px;
-      font-size: 16px;
+      margin-left: 0.16rem;
+      font-size: 0.32rem;
     }
   }
   .publish{
     position: fixed;
-    right: 20px;
-    bottom: 60px;
+    right: 0.4rem;
+    bottom: 1.2rem;
 
     .publish-img{
-      height: 68px;
+      height: 1.36rem;
     }
   }
   .write1{
@@ -195,43 +195,43 @@
     .write-box{
       position: fixed;
       bottom: 0;
-      height: 180px;
+      height: 3.6rem;
       width: 100%;
       background-color: #eee;
       z-index:999;
 
 
       .box-input{
-        width: 340px;
-        height: 110px;
-        margin-top: 10px;
+        width: 6.8rem;
+        height: 2.2rem;
+        margin-top: 0.2rem;
         border: 0;
         resize: none;
         outline: none;
-        font-size: 16px;
+        font-size: 0.32rem;
         box-sizing: border-box;
-        padding: 0 8px;
+        padding: 0 0.16rem;
       }
       .write-box-btn{
         box-sizing: border-box;
       }
       .box-sure{
         float: left;
-        margin: 10px 20px;
-        height: 26px;
-        width: 36px;
+        margin: 0.02rem 0.4rem;
+        height: 0.52rem;
+        width: 0.72rem;
         background-color: #ef473a;
         border: 0;
         color: #fff;
-        border-radius: 4px;
+        border-radius: 0.08rem;
       }
       .box-false{
         float: right;
-        margin: 10px 20px;
-        height: 26px;
-        width: 36px;
+        margin: 0.2rem 0.4rem;
+        height: 0.52rem;
+        width: 0.72rem;
         border: 0;
-        border-radius: 4px;
+        border-radius: 0.08rem;
         background-color: #eee;
       }
     }

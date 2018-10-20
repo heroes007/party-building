@@ -12,11 +12,11 @@
         <img class="essay-img" src="../../assets/icon1.png" alt="">
         <div class="essay-title">政治学习</div>
       </router-link>
-      <router-link to="" class="content-essay link">
+      <router-link :to="{path:'/index/loading', query:{title:'思想汇报'}}" class="content-essay link">
         <img class="essay-img" src="../../assets/icon2.png" alt="">
         <div class="essay-title">思想汇报</div>
       </router-link>
-      <router-link to="" class="content-essay link">
+      <router-link :to="{path:'/index/loading', query:{title:'心得总结'}}" class="content-essay link">
         <img class="essay-img" src="../../assets/icon3.png" alt="">
         <div class="essay-title">心得总结</div>
       </router-link>
@@ -51,14 +51,14 @@
     flex-wrap: wrap;
 
     .content-essay{
-      width: 80px;
-      margin: 20px;
+      width: 1.6rem;
+      margin: 0.4rem;
 
       .essay-img{
-        width: 80px;
+        width: 1.6rem;
       }
       .essay-title{
-        font-size: 16px;
+        font-size: 0.32rem;
       }
     }
   }

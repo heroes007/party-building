@@ -65,36 +65,36 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 100px;
-    font-size: 16px;
+    margin-top: 2rem;
+    font-size: 0.32rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .content-password{
-    height: 80px;
-    width: 280px;
+    height: 0.16rem;
+    width: 5.6rem;
 
     .content-title{
       text-align: left;
-      margin: 10px 0 10px 4px;
+      margin: 0.2rem 0 0.2rem 0.08rem;
     }
     .content-input{
-      width: 280px;
-      height: 36px;
-      border: 1px solid #999;
-      border-radius: 6px;
+      width: 5.6rem;
+      height: 0.72rem;
+      border: 0.02rem solid #999;
+      border-radius: 0.12rem;
     }
   }
   .sure{
-    width: 280px;
-    height: 46px;
-    margin-top: 30px;
-    border-radius: 6px;
+    width: 5.6rem;
+    height: 0.92rem;
+    margin-top: 0.6rem;
+    border-radius: 0.12rem;
     background-color: #ef473a;
     color: #fff;
     border: 0;
-    font-size: 18px;
+    font-size: 0.36rem;
   }
 
 </style>

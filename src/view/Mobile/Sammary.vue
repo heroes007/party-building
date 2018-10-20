@@ -20,20 +20,20 @@
 
 <style scoped>
   .content{
-    margin-top: 200px;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .btn{
-    height: 48px;
-    width: 180px;
+    height: 0.96rem;
+    width: 3.6rem;
     background-color: #ef473a;
     color: #fff;
     border: 0;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-top: 40px;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    margin-top: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;

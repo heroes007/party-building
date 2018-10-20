@@ -3,13 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import {$axios} from './utils'
 import store from './view/store'
+import Mint from 'mint-ui';
 
 Vue.config.productionTip = false
-Vue.use(ElementUI);
+Vue.use(Mint);
 Vue.prototype.$axios = $axios
 Vue.prototype.back = function () {
     router.go(-1)

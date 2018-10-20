@@ -43,7 +43,6 @@
       getData(){
         this.token = this.$store.state.token
         this.$axios.get('/hhdj/branch/findAll.do').then(res => {
-          console.log(res)
           this.rows = res.rows
         })
       }
@@ -56,50 +55,50 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
-    font-size: 18px;
+    margin-top: 0.8rem;
+    font-size: 0.36rem;
   }
   .rule{
-    padding: 10px;
+    padding: 0.2rem;
     color: #666;
 
     .title{
-      font-size: 16px;
+      font-size: 0.32rem;
       font-weight: bold;
-      margin: 10px 0;
+      margin: 0.2rem 0;
     }
     .common{
-      margin: 10px 0;
+      margin: 0.2rem 0;
       text-align: left;
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 0.28rem;
+      line-height: 0.44rem;
       }
   }
   .choose{
-    margin-top: 36px;
+    margin-top: 0.72rem;
     display: flex;
 
     .choose-select{
-      margin: 0 20px;
-      height: 40px;
-      width: 200px;
+      margin: 0 0.4rem;
+      height: 0.8rem;
+      width: 4rem;
       background-color: #c50206;
       color: #fff;
       border: 0;
-      border-radius: 6px;
-      padding-left: 10px;
+      border-radius: 0.12rem;
+      padding-left: 0.2rem;
     }
     .choose-link{
-      height: 40px;
-      width: 100px;
+      height: 0.8rem;
+      width: 2rem;
       background-color: #c50206;
       color: #fff;
       border: 0;
-      border-radius: 6px;
+      border-radius: 0.12rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 0.28rem;
     }
   }
 </style>

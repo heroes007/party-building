@@ -71,52 +71,52 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
+    margin-top: 0.8rem;
 
     .content-scores{
-      height: 144px;
+      height: 2.88rem;
       background-image: url('../../assets/jifen.png');
       background-size: 100% 100%;
 
       .scores{
-        font-size: 24px;
+        font-size: 0.48rem;
         color: #fff;
         display: inline-block;
-        margin-top: 60px;
+        margin-top: 1.2rem;
       }
     }
 
     .content-link{
-      height: 40px;
+      height: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 18px;
-      padding: 10px;
-      margin-top: 4px;
+      font-size: 0.36rem;
+      padding: 0.2rem;
+      margin-top: 0.08rem;
       box-sizing: border-box;
-      border-top: 1px solid #eee;
+      border-top: 0.02rem solid #eee;
 
       .link-left{
         display: flex;
         align-items: center;
       }
       .left-img{
-        height: 28px;
+        height: 0.56rem;
       }
       .left-title{
-        margin-left: 10px;
+        margin-left: 0.02rem;
       }
       .link-right{
-        height: 20px;
+        height: 0.04rem;
       }
     }
   }
   .rule-title{
     background-color: #eee;
-    font-size: 18px;
-    height: 24px;
-    padding: 10px;
+    font-size: 0.36rem;
+    height: 0.48rem;
+    padding: 0.2rem;
 
     .rule-title-name{
       float: left;
@@ -124,7 +124,7 @@
 
     .rule-title-img{
       float: right;
-      height: 22px;
+      height: 0.44rem;
     }
   }
   .rule-content{
@@ -132,10 +132,10 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    height: 30px;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    font-size: 16px;
+    height: 0.6rem;
+    padding: 0.2rem;
+    border-bottom: 0.02rem solid #eee;
+    font-size: 0.32rem;
     color: #999;
   }
 </style>

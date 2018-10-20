@@ -38,22 +38,22 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
-    padding: 20px 0;
+    margin-top: 0.8rem;
+    padding: 0.4rem 0;
     display: flex;
     flex-wrap: wrap;
   }
   .content-box{
-    width: 160px;
-    margin: 0 13px;
+    width: 3.2rem;
+    margin: 0 0.26rem;
 
     .box-img{
-      height: 140px;
-      width: 160px;
+      height: 2.8rem;
+      width: 3.2rem;
       vertical-align: middle;
     }
     .box-title {
-      font-size: 14px;
+      font-size: 0.28rem;
       text-align: left;
       display: -webkit-box;
       -webkit-box-orient: vertical;

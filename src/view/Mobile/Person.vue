@@ -39,7 +39,6 @@
           var imgcode = e.target.result;
           _this.formData.myFile = imgcode.split(',')[1];
           _this.data.push(imgcode)
-          console.log(_this.data)
         }
       },
       submit(){
@@ -56,24 +55,24 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 60px;
+    margin-top: 1.2rem;
   }
   .content-label{
-    height: 120px;
-    width: 120px;
+    height: 2.4rem;
+    width: 2.4rem;
     display: block;
     float: left;
   }
   .content-input{
-    height: 120px;
-    width: 120px;
+    height: 2.4rem;
+    width: 2.4rem;
     display: none;
   }
   .content-img{
-    height: 105px;
-    width: 105px;
+    height: 2.1rem;
+    width: 2.1rem;
     float: left;
-    margin: 10px;
+    margin: 0.2rem;
   }
   .btn{
     position: fixed;
@@ -81,10 +80,10 @@
     right: 0;
     bottom: 100px;
     width: 100%;
-    height: 44px;
+    height: 0.88rem;
     background-color: #ef473a;
     color: #fff;
     border: 0;
-    border-radius: 4px;
+    border-radius: 0.08rem;
   }
 </style>

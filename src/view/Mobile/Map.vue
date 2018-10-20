@@ -31,7 +31,7 @@
 
 <style scoped lang="scss">
   #container{
-    margin-top: 42px;
+    margin-top: 0.84rem;
     height: 93vh;
     width: 7.5rem;
   }

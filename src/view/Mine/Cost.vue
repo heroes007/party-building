@@ -53,33 +53,33 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
+    margin-top: 0.8rem;
 
     .content-title{
-      padding: 6px;
-      font-size: 20px;
+      padding: 0.12rem;
+      font-size: 0.4rem;
       text-align: left;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 0.02rem solid #ccc;
     }
   }
   .pay{
-    padding: 14px;
+    padding: 0.28rem;
     display: flex;
-    font-size: 20px;
+    font-size: 0.4rem;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.02rem solid #ccc;
 
     .pay-left{
       display: flex;
 
       .left-img{
-        height: 36px;
-        margin-right: 10px;
+        height: 0.72rem;
+        margin-right: 0.2rem;
       }
     }
     .pay-right{
-      height: 20px;
+      height: 0.4rem;
     }
   }
   .pay-content{
@@ -92,8 +92,8 @@
     z-index: 998;
 
     .pay-img{
-      height: 300px;
-      margin-top: 200px;
+      height: 6rem;
+      margin-top: 4rem;
     }
   }
 </style>

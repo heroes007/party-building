@@ -107,6 +107,10 @@ export default new Router({
     {
       path:'/index/sammary/people',
       component: () => import('@/view/Mobile/People')
+    },
+    {
+      path:'/index/loading',
+      component: () => import('@/view/Mobile/Loading')
     }
   ]
 })

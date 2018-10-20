@@ -45,13 +45,13 @@
 
 <style scoped lang="scss">
   .content{
-    margin-top: 40px;
+    margin-top: 0.8rem;
   }
   .box{
-    padding: 10px;
+    padding: 0.2rem;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.02rem solid #ccc;
     justify-content: space-between;
     align-items: center;
 
@@ -62,18 +62,18 @@
     }
 
     .box-img{
-      height: 28px;
-      width: 32px;
+      height: 0.56rem;
+      width: 0.64rem;
     }
     .box-name{
-      font-size: 16px;
-      margin: 0 10px;
+      font-size: 0.32rem;
+      margin: 0 0.2rem;
     }
     .box-sch{
-      font-size: 16px;
+      font-size: 0.32rem;
     }
   }
   .none{
-    margin-top: 60px;
+    margin-top: 1.2rem;
   }
 </style>
