@@ -1,23 +1,25 @@
 <template>
   <div>
-    <div class="top">
-      <img class="top-left" src="../../assets/左.png" @click="back" alt="">
-      <div class="top-title">{{this.title}}</div>
-    </div>
-    <div class="news-main">
-      <router-link :to="{path:'/index/news/content', query:{newsId:item.newsId, title:title}}" class="new-content link" v-for="(item, index) in content" :key="index">
-        <img class="content-img" :src='item.pic' alt="">
-        <div class="content-essay">
-          <div class="essay-title">{{item.title}}</div>
-          <div class="essay-bottom">
-            <div class="bottom-time">{{item.currentTime}}</div>
-            <img class="bottom-img" src="../../assets/12-eye.png" alt="">
-            <div class="bottom-num">{{item.count}}</div>
+    <Loadmore class="loadMore" :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="ready" ref="loadmore">
+      <div class="top">
+        <img class="top-left" src="../../assets/左.png" @click="back" alt="">
+        <div class="top-title">{{this.title}}</div>
+      </div>
+      <div class="news-main">
+        <router-link :to="{path:'/index/news/content', query:{newsId:item.newsId, title:title}}" class="new-content link" v-for="(item, index) in content" :key="index">
+          <img class="content-img" :src='item.pic' alt="">
+          <div class="content-essay">
+            <div class="essay-title">{{item.title}}</div>
+            <div class="essay-bottom">
+              <div class="bottom-time">{{item.currentTime}}</div>
+              <img class="bottom-img" src="../../assets/12-eye.png" alt="">
+              <div class="bottom-num">{{item.count}}</div>
+            </div>
           </div>
-        </div>
-      </router-link>
-      <div class="news-bottom">没有更多数据了</div>
-    </div>
+        </router-link>
+        <div v-if="isShow" class="news-bottom">没有更多数据了</div>
+      </div>
+    </Loadmore>
   </div>
 </template>
 
@@ -33,7 +35,9 @@
           page:1,
           rows:10,
           type:1
-        }
+        },
+        ready:false,
+        total:''
       }
     },
     components:{
@@ -43,13 +47,27 @@
       getData() {
         this.newsData.type = this.$route.query.type
         this.$axios.get(`http://211.67.177.56:8080/hhdj/news/newsList.do`,this.newsData).then(res => {
-          this.content = res.rows
+          this.total = res.total
+          this.content = [...this.content, ...res.rows]
         })
         this.title = this.$route.query.title
       },
+      loadTop(){
+        this.getData()
+        this.$refs.loadmore.onTopLoaded();
+      },
       loadBottom(){
-        console.log(123)
-      }
+        // if(this.content.length < total){
+        //   this.newsData.page += 1
+        //   this.$refs.loadmore.onBottomLoaded();
+        //   this.getData()
+        // }else {
+        //   this.ready = true
+        // }
+        this.newsData.page += 1
+        this.$refs.loadmore.onBottomLoaded();
+        this.getData()
+      },
     },
     created() {
       this.getData()
@@ -107,5 +125,8 @@
     margin: 0.2rem 0;
     font-size: 0.32rem;
     color: #666;
+  }
+  .loadMore{
+    font-size: 20px;
   }
 </style>
